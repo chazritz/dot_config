@@ -10,7 +10,11 @@ alias vi=nvim
 alias vim=nvim
 alias cdgr='cd $(git rev-parse --show-toplevel)'
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ "$(uname -s)" == "Linux" ]]; then
+else
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
