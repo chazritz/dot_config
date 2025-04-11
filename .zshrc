@@ -8,7 +8,7 @@ export VISUAL='nvim'
 set -o vi
 alias vi=nvim
 alias vim=nvim
-alias cdr='cd $(git rev-parse --show-toplevel)'
+alias cdgr='cd $(git rev-parse --show-toplevel)'
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -22,6 +22,9 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 
 autoload -Uz compinit
 compinit
-setopt share_history
+#setopt share_history
+
+## Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 eval "$(starship init zsh)"
