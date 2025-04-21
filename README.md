@@ -1,6 +1,4 @@
 # dot_config
-~/.config
-
 I largely use this for syncing my config files across machines.<br>
 You can use these as examples of how to configure tmux/neovim.<br>
 The way I use them is I clone the repo and then ln -s the ~/.config/nvim directory and the ~/tmux.conf<br>
