@@ -4,6 +4,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export CLICOLOR=1
 export EDITOR='nvim'
 export VISUAL='nvim'
+autoload -U add-zsh-hook
 
 set -o vi
 alias vi=nvim
@@ -26,6 +27,20 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 
 autoload -Uz compinit
 compinit
+select_env() {
+  eval $(~/code/tools-and-infrastructure/scripts/developer/select_env_menu.sh)
+}
+
+function load-nvmrc {
+  if [ -f ".nvmrc" ]; then
+    node_version=$(< .nvmrc)
+    if [ ! -z "$node_version" ] && [ "$node_version" != "$(nvm version default)" ]; then
+      echo "Using Node version: $node_version"
+      nvm use "$node_version"
+    fi
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
 #setopt share_history
 
 ## Set up fzf key bindings and fuzzy completion
