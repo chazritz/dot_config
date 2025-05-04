@@ -1,22 +1,22 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](color_orange)\
+[](color_bg1)\
 $os\
-$username\
-[](bg:color_yellow fg:color_orange)\
+$time\
+[](bg:color_yellow fg:color_bg1)\
 $directory\
-[](fg:color_yellow bg:color_aqua)\
+[](bg:color_aqua fg:color_yellow)\
 $git_branch\
 $git_status\
 [](fg:color_aqua bg:color_blue)\
 $c\
 $golang\
 $nodejs\
-[](fg:color_blue bg:color_bg1)\
-$time\
-[ ](fg:color_bg1)\
-$line_break$character"""
+[ ](fg:color_blue)\
+$line_break\
+$character\
+"""
 
 palette = 'gruvbox_dark'
 
@@ -34,7 +34,7 @@ color_yellow = '#d79921'
 
 [os]
 disabled = false
-style = "bg:color_orange fg:color_fg0"
+style = "bg:color_bg1 fg:color_fg0"
 
 [os.symbols]
 Windows = "󰍲"
@@ -81,7 +81,7 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 style = "bg:color_aqua"
-format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
+format = '[[$symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [git_status]
 style = "bg:color_aqua"
@@ -145,7 +145,8 @@ format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
 disabled = false
 time_format = "%R"
 style = "bg:color_bg1"
-format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
+#format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
+format = '[[ $time ](fg:color_fg0 bg:color_bg1)]($style)'
 
 [line_break]
 disabled = false
