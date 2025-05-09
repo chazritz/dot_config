@@ -7,16 +7,12 @@ export NVM_DIR="$HOME/.nvm"
 # Command line vi editing mode - much nicer than arrow keys
 set -o vi
 
-# Set up LS_COLORS for theming
-export LS_COLORS="$(vivid generate catppuccin-mocha)"
-
 # You need this for nvmrc directory changes, but probably other things?
 autoload -U add-zsh-hook
 
-alias vi=nvim
-
 #alias to change into the root of the git repository
 alias cdgr='cd $(git rev-parse --show-toplevel)'
+alias vi=nvim
 
 #This file is shared between linux and macOS - on macOS we want brew commands
 export OS=$(uname -s)
@@ -26,6 +22,9 @@ if [[ "${OS}" == "Darwin" ]]; then
   #GNU LS ( from brew install coreutils ) - this is needed for a working LS_COLORS, which is used by vivid for ls theming
   alias ls='gls --color=auto --group-directories-first'
 fi
+
+# Set up LS_COLORS for theming
+export LS_COLORS="$(vivid generate catppuccin-latte)"
 
 ## Set up nvm and rvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
