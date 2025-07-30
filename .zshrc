@@ -21,6 +21,8 @@ if [[ "${OS}" == "Darwin" ]]; then
   export PATH="/opt/homebrew/bin:$PATH"
   #GNU LS ( from brew install coreutils ) - this is needed for a working LS_COLORS, which is used by vivid for ls theming
   alias ls='gls --color=auto --group-directories-first'
+else
+  alias ls='ls --color=auto --group-directories-first'
 fi
 
 # Set up LS_COLORS for theming
