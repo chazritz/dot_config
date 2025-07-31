@@ -4,6 +4,15 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export NVM_DIR="$HOME/.nvm"
 
+HISTFILE=~/.zsh_history
+HISTSIZE=12000
+SAVEHIST=10000
+
+setopt appendhistory
+setopt share_history
+setopt inc_append_history
+setopt hist_ignore_all_dups
+
 # Command line vi editing mode - much nicer than arrow keys
 set -o vi
 
