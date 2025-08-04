@@ -45,7 +45,9 @@ export LS_COLORS="$(vivid generate catppuccin-latte)"
 # This function loads the nvmrc file if it exists in the current directory
 function load-nvmrc {
   if [ -f ".nvmrc" ]; then
+    echo "Found .nvmrc file in $(pwd)"
     node_version=$(< .nvmrc)
+    echo "Desired node version: $node_version"
     if [ ! -z "$node_version" ] && [ "$node_version" != "$(nvm version default)" ]; then
       echo "Using Node version: $node_version"
       nvm use "$node_version"
@@ -71,6 +73,9 @@ add-zsh-hook chpwd load-nvmrc
 autoload -Uz compinit
 compinit
 
+setopt share_history # Share history between sessions
+setopt inc_append_history # Append history to file immediately
+
 #Carapace autocomplete does some heavy autocomplete suggestions
 #Its completion list - https://carapace-sh.github.io/carapace-bin/completers.html
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
@@ -83,4 +88,5 @@ source <(fzf --zsh)
 
 #Starship = pretty command prompt - uses ~/.config/starship.toml for configuration
 eval "$(starship init zsh)"
+
 
