@@ -86,6 +86,9 @@ source <(carapace _carapace)
 ## Ctrl-R to search history, Ctrl-T to search files ( probably does other things as well ) 
 source <(fzf --zsh)
 
+##Path remembering
+eval "$(zoxide init zsh)"
+
 #Starship = pretty command prompt - uses ~/.config/starship.toml for configuration
 eval "$(starship init zsh)"
 
