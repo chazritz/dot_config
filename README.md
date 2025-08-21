@@ -7,8 +7,6 @@ Since I'm prone to making changes you may wish to fork or just copy.<br>
 Tmux-leader key is Ctrl-Space<br>
 NeoVim-leader key is Space
 
-This also has a fairly decent tmux config with the leader set to Ctrl-Space<br>
-
 For the .zshrc file, you will need the following tools installed ( they are useful ) 
 homebrew ( if using macOS ) 
 vivid ( for themable ls colors )
