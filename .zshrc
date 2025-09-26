@@ -93,3 +93,6 @@ eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
 
+
+# opencode
+export PATH=/home/chad/.opencode/bin:$PATH
