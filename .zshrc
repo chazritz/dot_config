@@ -101,7 +101,6 @@ alias ds='node ${HOME}/code/tools-and-infrastructure/webdev-tools/menu.js'
 
 # opencode
 export PATH=/home/chad/.opencode/bin:$PATH
-=======
 
 # ZVM
 export ZVM_INSTALL="$HOME/.zvm/self"
