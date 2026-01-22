@@ -24,11 +24,9 @@ return {
       preset = 'default',
     },
 
-    appearance = {
-      -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-      -- Adjusts spacing to ensure icons are aligned
-      nerd_font_variant = 'Nerf Font Mono'
-    },
+    -- appearance = {
+    --   nerd_font_variant = 'Nerf Font Mono'
+    -- },
 
     -- (Default) Only show the documentation popup when manually triggered
     completion = { documentation = { auto_show = false } },
@@ -36,7 +34,7 @@ return {
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      default = { 'lsp' },
     },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
@@ -44,7 +42,8 @@ return {
     -- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
     --
     -- See the fuzzy documentation for more information
-    fuzzy = { implementation = "prefer_rust_with_warning" }
+    fuzzy = { implementation = "prefer_rust_with_warning" },
+    signature = { enabled = true }
   },
   opts_extend = { "sources.default" }
 }

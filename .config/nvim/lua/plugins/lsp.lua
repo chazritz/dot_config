@@ -1,16 +1,18 @@
 return {
     "neovim/nvim-lspconfig",
+    lazy = false,
     dpendencies = {
         'saghen/blink.cmp'
     },
     event = { "BufReadPost", "BufNewFile" },
     cmd = { "LspInfo", "LspInstall", "LspUninstall" },
     config = function()
-        local capabilities = require("blink.cmp").get_lsp_capabilities()
-        local lspconfig = require("lspconfig")
+        vim.lsp.config('lua_ls', {})
+        vim.lsp.config('zls', {})
+        vim.lsp.config('ts_ls',{})
 
-        lspconfig.lua_ls.setup {capabilities = capabilities}
-        lspconfig.zls.setup({ capabilities = capabilities })
-        lspconfig.ts_ls.setup({ capabilities = capabilities })
+        vim.lsp.enable('lua_ls')
+        vim.lsp.enable('zls')
+        vim.lsp.enable('ts_ls',{})
     end,
 }

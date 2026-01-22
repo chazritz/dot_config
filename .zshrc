@@ -22,6 +22,10 @@ autoload -U add-zsh-hook
 #alias to change into the root of the git repository
 alias cdgr='cd $(git rev-parse --show-toplevel)'
 alias vi=nvim
+alias onering='~/code/tools-and-infrastructure/scripts/developer/one-ring/onering.sh'
+alias login_aws='~/code/tools-and-infrastructure/scripts/developer/one-ring/onering.sh --function=login_aws_non_admin_profiles'
+alias login_aws_admin='~/code/tools-and-infrastructure/scripts/developer/one-ring/onering.sh --function=login_aws_admin_profiles'
+
 
 #This file is shared between linux and macOS - on macOS we want brew commands
 export OS=$(uname -s)
@@ -92,7 +96,15 @@ eval "$(zoxide init zsh)"
 #Starship = pretty command prompt - uses ~/.config/starship.toml for configuration
 eval "$(starship init zsh)"
 
+alias ds='node ${HOME}/code/tools-and-infrastructure/webdev-tools/menu.js'
 
 
 # opencode
 export PATH=/home/chad/.opencode/bin:$PATH
+=======
+
+# ZVM
+export ZVM_INSTALL="$HOME/.zvm/self"
+export PATH="$PATH:$HOME/.zvm/bin"
+export PATH="$PATH:$ZVM_INSTALL/"
+
