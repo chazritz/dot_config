@@ -4,6 +4,14 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set nu")
 vim.g.mapleader = " "
+vim.diagnostic.config({
+    virtual_text = true,
+    signs = true,
+    float = {
+        source = "always",
+        border = "single",
+    }
+});
 --vim.opt.clipboard = "unnamedplus"
 --vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>");
 --vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>");

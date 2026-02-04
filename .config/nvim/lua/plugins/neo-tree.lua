@@ -15,5 +15,6 @@ return {
   },
   config = function() 
     vim.keymap.set('n', '<leader>fs', ':Neotree<CR>', {})
+    vim.keymap.set('n', '<leader>fr', ':Neotree reveal<CR>', {})
   end
 }
