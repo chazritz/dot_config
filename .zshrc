@@ -3,6 +3,7 @@ export CLICOLOR=1
 export EDITOR='nvim'
 export VISUAL='nvim'
 export NVM_DIR="$HOME/.nvm"
+export TERM="xterm-256color"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=12000
@@ -104,7 +105,7 @@ export PATH=/home/chad/.opencode/bin:$PATH
 
 # ZVM
 export ZVM_INSTALL="$HOME/.zvm/self"
-export PATH="$PATH:$HOME/.zvm/bin"
-export PATH="$PATH:$ZVM_INSTALL/"
+export PATH="$HOME/.zvm/bin:${PATH}"
+export PATH="$ZVM_INSTALL:${PATH}"
 
-neofetch
+# fastfetch
