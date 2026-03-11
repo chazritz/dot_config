@@ -108,4 +108,4 @@ export ZVM_INSTALL="$HOME/.zvm/self"
 export PATH="$HOME/.zvm/bin:${PATH}"
 export PATH="$ZVM_INSTALL:${PATH}"
 
-# fastfetch
+fastfetch
