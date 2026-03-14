@@ -3,6 +3,7 @@ vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set nu")
+vim.opt.clipboard = "unnamedplus"
 vim.g.mapleader = " "
 vim.diagnostic.config({
     virtual_text = true,
