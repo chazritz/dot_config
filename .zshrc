@@ -22,6 +22,8 @@ autoload -U add-zsh-hook
 
 #alias to change into the root of the git repository
 alias cdgr='cd $(git rev-parse --show-toplevel)'
+alias gbs='git branch --sort=-committerdate'
+
 alias vi=nvim
 alias onering='~/code/tools-and-infrastructure/scripts/developer/one-ring/onering.sh'
 alias login_aws='~/code/tools-and-infrastructure/scripts/developer/one-ring/onering.sh --function=login_aws_non_admin_profiles'

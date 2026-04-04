@@ -3,7 +3,16 @@ vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.cmd("set nu")
-vim.opt.clipboard = "unnamedplus"
+-- this seems to update all change/yank commands which doesn't always work
+-- vim.opt.clipboard = "unnamedplus"
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    -- Only sync if the yank was to the default register
+    if vim.v.event.operator == "y" and vim.v.event.regname == "" then
+      vim.fn.setreg("+", vim.v.event.regcontents)
+    end
+  end,
+})
 vim.g.mapleader = " "
 vim.diagnostic.config({
     virtual_text = true,
@@ -13,6 +22,7 @@ vim.diagnostic.config({
         border = "single",
     }
 });
+
 -- Set the 'autoread' option to automatically reload the file if changes are detected on disk
 vim.o.autoread = true
 
@@ -33,6 +43,5 @@ vim.api.nvim_create_autocmd({ "FileChangedShellPost" }, {
   pattern = "*"
 })
 
---vim.opt.clipboard = "unnamedplus"
 --vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>");
 --vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>");
