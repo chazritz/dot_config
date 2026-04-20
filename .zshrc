@@ -3,7 +3,7 @@ export CLICOLOR=1
 export EDITOR='nvim'
 export VISUAL='nvim'
 export NVM_DIR="$HOME/.nvm"
-export TERM="xterm-256color"
+#export TERM="xterm-256color"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=12000

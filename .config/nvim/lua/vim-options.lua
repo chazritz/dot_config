@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     -- Only sync if the yank was to the default register
     if vim.v.event.operator == "y" and vim.v.event.regname == "" then
-      vim.fn.setreg("+", vim.v.event.regcontents)
+      vim.fn.setreg("+", vim.v.event.regcontents, 'c')
     end
   end,
 })
