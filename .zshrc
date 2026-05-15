@@ -3,15 +3,13 @@ export CLICOLOR=1
 export EDITOR='nvim'
 export VISUAL='nvim'
 export NVM_DIR="$HOME/.nvm"
-#export TERM="xterm-256color"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=12000
 SAVEHIST=10000
 
-setopt appendhistory
-setopt share_history
 setopt inc_append_history
+setopt share_history
 setopt hist_ignore_all_dups
 
 # Command line vi editing mode - much nicer than arrow keys
@@ -79,9 +77,6 @@ add-zsh-hook chpwd load-nvmrc
 # zsh Auto complete - needed by carapace ( for the curious, compinit is a zsh internal thing, not a package ) 
 autoload -Uz compinit
 compinit
-
-setopt share_history # Share history between sessions
-setopt inc_append_history # Append history to file immediately
 
 #Carapace autocomplete does some heavy autocomplete suggestions
 #Its completion list - https://carapace-sh.github.io/carapace-bin/completers.html
