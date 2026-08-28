@@ -32,7 +32,7 @@ alias login_aws_admin='~/code/tools-and-infrastructure/scripts/developer/one-rin
 export OS=$(uname -s)
 if [[ "${OS}" == "Darwin" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
-  export PATH="/opt/homebrew/bin:$PATH"
+  export PATH="/opt/homebrew/bin:$HOME/mongodb-database-tools-macos-arm64-100.7.5/bin:$PATH"
   #GNU LS ( from brew install coreutils ) - this is needed for a working LS_COLORS, which is used by vivid for ls theming
   alias ls='gls --color=auto --group-directories-first'
 else
@@ -106,3 +106,6 @@ export PATH="$HOME/.zvm/bin:${PATH}"
 export PATH="$ZVM_INSTALL:${PATH}"
 
 fastfetch
+
+# Added by Antigravity IDE
+export PATH="/Users/chad/.antigravity-ide/antigravity-ide/bin:$PATH"
